@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="module" >
+        const rootDiv = document.getElementById("root");
+
+        const child_element = document.createElement("div");
+        child_element.textContent = "Hi this is the fundamental to react from the javascript DOM manipulation" ;
+
+        rootDiv.append(child_element);
+    </script>
+</body>
+</html>
