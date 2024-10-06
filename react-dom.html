@@ -12,12 +12,28 @@
     <div id="root"></div>
 
     <script type="module" >
-
+        // Access the root div element
         const docRoot = document.getElementById('root') ;
+        const spanHello = React.createElement(
+                'span',
+                null,
+                // 🐨 replace the "Hello World" with createElement calls that creates
+                // a span with the text "Hello" and another span with the text "World"
+                // also, you'll need to add a space string (" ") between the spans
+                'Hello',
+            )
 
-        const elementProps = { id: 'element-1', children: 'Hello world!' }
+            const spanWorld = React.createElement(
+                'span',
+                null,
+                // 🐨 replace the "Hello World" with createElement calls that creates
+                // a span with the text "Hello" and another span with the text "World"
+                // also, you'll need to add a space string (" ") between the spans
+                'World',
+            )
+
         const elementType = 'h1'
-        const element_1 = React.createElement(elementType, elementProps)
+        const element_1 = React.createElement(elementType, null, spanHello, ' ', spanWorld) // Create a react element with React.createElement('elementType', elementProps)
 
         const elementProps_2 = { id: 'element-2', children: 'This is a barebone React App without JSX!' }
         const elementType_2 = 'h3'
@@ -25,9 +41,9 @@
 
         const finalReactElement = React.createElement('div', null, element_1, element_2)
 
-        const reactRootElement = ReactDOM.createRoot(docRoot)
+        const reactRootElement = ReactDOM.createRoot(docRoot) // Create react DOM root element
 
-        reactRootElement.render(finalReactElement)
+        reactRootElement.render(finalReactElement) // Use the react DOM root element to render the final React element
        
         
     </script>
