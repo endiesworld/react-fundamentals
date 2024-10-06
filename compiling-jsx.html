@@ -5,6 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .container{
+            background-color: blueviolet;
+            width: 50%;
+            height: 10%;
+        }
+    </style>
     <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -14,9 +21,18 @@
     <div id="root"></div>
     <script type="text/babel" data-type="module">
         const docRoot = document.getElementById("root");
- 
-        const element = <div className='container'> 
-                <h1> Hello World </h1> 
+
+        const content = 'Hello World'
+        const className = 'container'
+
+        const element = <div className= {className}> 
+                 {/* Adding a little bit of interpolation i.e making jsx dynamic with the curly braces {some_variable or javascript expression}
+                    A Javascript expression is something that evaluate to a value.
+                    An immediately invoked arrow function is also an expression <i class="e">
+                        (()=> some_data_to_return or some_expression)()
+                    You can also have tenary operators inside {}
+                    </i> */ }
+                <h1> {content} </h1> 
                 <p> 
                     this is an example of compiling JSX with Babel for react 
                 </p>
