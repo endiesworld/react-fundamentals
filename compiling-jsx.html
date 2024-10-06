@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel" data-type="module">
+        const docRoot = document.getElementById("root");
+ 
+        const element = <div className='container'> 
+                <h1> Hello World </h1> 
+                <p> 
+                    this is an example of compiling JSX with Babel for react 
+                </p>
+            </div>
+
+        const reactRootElement = ReactDOM.createRoot(docRoot) // Create react DOM root element
+
+        reactRootElement.render(element) // Use the react DOM root element to render the final React element
+    </script>
+        <!-- Here is the script tag that ll do the job: -->
+    
+</body>
+
+</html>
