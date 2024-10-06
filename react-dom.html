@@ -39,7 +39,28 @@
         const elementType_2 = 'h3'
         const element_2 = React.createElement(elementType_2, elementProps_2)
 
-        const finalReactElement = React.createElement('div', null, element_1, element_2)
+        //DEEP NESTING
+        const samsFood = React.createElement(
+                'ul',
+                { className: 'sams-food' },
+                // 🐨 replace the "Hello World" with createElement calls that creates
+                // a span with the text "Hello" and another span with the text "World"
+                // also, you'll need to add a space string (" ") between the spans
+                React.createElement('li', null, 'Green Egg'),
+                React.createElement('li', null, 'Ham'),
+            )
+
+            const element = React.createElement(
+                'div',
+                { className: 'container' },
+                // 🐨 replace the "Hello World" with createElement calls that creates
+                // a span with the text "Hello" and another span with the text "World"
+                // also, you'll need to add a space string (" ") between the spans
+                React.createElement('p', null, `Here's Sam's favorite food:`),
+                samsFood
+            )
+
+        const finalReactElement = React.createElement('div', null, element_1, element_2, element)
 
         const reactRootElement = ReactDOM.createRoot(docRoot) // Create react DOM root element
 
