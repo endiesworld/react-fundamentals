@@ -1,0 +1,74 @@
+<!-- React components are functions which accept an object called "props" and return something that is renderable. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            background-color: blueviolet;
+            width: 50%;
+            height: 10%;
+        }
+    </style>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel" data-type="module">
+        const docRoot = document.getElementById("root");
+
+        // Referring to children property here in this manner is called destructuring in javascript.
+        function Message({ children }) {
+                return <div className="message">{children}</div>
+            }
+
+            // 🐨 use that function in place of the divs below with:
+            // 💰 {message({children: 'Hello World'})} {message({children: 'Goodbye World'})}
+            const MessageElement = () => (
+                <div className="container">
+                    {Message({ children: "Hello World" })}
+                    {Message({ children: "Goodbye World" })}
+                </div>
+            )
+
+        function Greeting(props) {
+                return <h1>Hello, {props.name}</h1>
+            }
+
+
+        const children = 'Hello World'
+        const className = 'container'
+        const props = { className, children } // children is a key world in React. It compiled/interpreted as a child element. if we us any other variable name, it will be compiled as a html attribute
+        //const element =  // ...props is called spread operator in JavaScript
+
+        const element = (
+            <>
+                <div  {...props} />
+                <p>Here's Sam's favorite food:</p>
+                <ul className="sams-food">
+                    <li>Green eggs</li>
+                    <li>Ham</li>
+                </ul>
+                <Greeting name="World" />
+                <MessageElement />
+
+            </>
+
+        )
+
+        const reactRootElement = ReactDOM.createRoot(docRoot) // Create react DOM root element
+
+        reactRootElement.render(element) // Use the react DOM root element to render the final React element
+    </script>
+    <!-- Here is the script tag that ll do the job: -->
+
+</body>
+
+</html>
