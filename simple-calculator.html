@@ -1,0 +1,68 @@
+<!-- React components are functions which accept an object called "props" and return something that is renderable. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            background-color: blueviolet;
+            width: 50%;
+            height: 10%;
+        }
+    </style>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel" data-type="module">
+        const docRoot = document.getElementById("root");
+
+        const operation = {
+            '+': (left, right) => left + right,
+            '-': (left, right) => left - right,
+            '*': (left, right) => left * right,
+            '/': (left, right) => left / right,
+        }
+
+        
+        const Calculator = ({ left, operator, right }) => {
+            const result = operation[operator](left, right) ;
+            return  (
+                <div className="message">
+                    <code>
+                        {left} {' '} {operator} {' '} {right} = <output> {result} </output>
+                    </code>
+                </div>
+        )
+            }
+
+
+
+            // The basic idea behind a custom component is for react to call your component when react is ready.
+        const element = (
+                <div>
+                    <h1>Calculator</h1>
+                    <Calculator left={1} operator="+" right={2} />
+                    <Calculator left={1} operator="-" right={2} />
+                    <Calculator left={1} operator="*" right={2} />
+                    <Calculator left={1} operator="/" right={2} />
+                </div>
+            )   
+
+
+        const reactRootElement = ReactDOM.createRoot(docRoot) // Create react DOM root element
+
+        reactRootElement.render(element) // Use the react DOM root element to render the final React element
+    </script>
+    <!-- Here is the script tag that ll do the job: -->
+
+</body>
+
+</html>

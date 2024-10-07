@@ -29,12 +29,15 @@
                 return <div className="message">{children}</div>
             }
 
-            // 🐨 use that function in place of the divs below with:
-            // 💰 {message({children: 'Hello World'})} {message({children: 'Goodbye World'})}
+            // use that function in place of the divs below with:
+            // In JavaScript, inline functions are functions that are defined and used directly where they are needed
             const MessageElement = () => (
                 <div className="container">
                     {Message({ children: "Hello World" })}
                     {Message({ children: "Goodbye World" })}
+                    {/* To call a componet in the preferred JSX way. */}
+                    <Message children='Hello World' />
+                    <Message> Goodbye World</Message>
                 </div>
             )
 
